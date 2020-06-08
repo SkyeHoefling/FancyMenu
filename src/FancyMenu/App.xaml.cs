@@ -10,7 +10,7 @@ namespace FancyMenu
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ContainerPage();
         }
 
         protected override void OnStart()

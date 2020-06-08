@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:FancyMenu"
+             mc:Ignorable="d"
+             x:Class="FancyMenu.ContainerPage">
+
+    <Grid>
+        <Grid x:Name="Flyout">
+            <Grid.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left"
+                                        Swiped="FlyoutClose" />
+            </Grid.GestureRecognizers>
+            <views:MenuPage />
+        </Grid>
+        <Frame x:Name="MainContent" BackgroundColor="Transparent" Margin="0" Padding="0">
+            <Frame.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Right"
+                                        Swiped="FlyoutOpen" />
+            </Frame.GestureRecognizers>
+            <views:MainPage />
+        </Frame>
+    </Grid>
+
+</ContentPage>
