@@ -8,7 +8,7 @@
              x:Class="FancyMenu.ContainerPage">
 
     <Grid>
-        <Grid x:Name="Flyout">
+        <Grid x:Name="Flyout" BackgroundColor="Transparent" Margin="0" Padding="0">
             <Grid.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Left"
                                         Swiped="FlyoutClose" />

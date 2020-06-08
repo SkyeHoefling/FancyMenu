@@ -7,19 +7,24 @@ namespace FancyMenu
     [DesignTimeVisible(false)]
     public partial class ContainerPage : ContentPage
     {
+        const float FlyoutCornerRadius = 25f;
+
         bool _isFlyoutOpen = false;
         double _scale;
         uint _flyoutSpeed = 200;
         double _pagePositionX;
         double _flyoutTranslationX;
-        float _flyoutCornerRadius = 25f;
-
+        
         public ContainerPage()
         {
             InitializeComponent();
+
+            // Set page scale for both content and flyout
             _scale = MainContent.Scale;
+            
             _pagePositionX = MainContent.TranslationX;
 
+            // Add event listeners for SizeChanged - Allows us to capture page values after it is rendered
             MainContent.SizeChanged += OnMainContentSizeChanged;
         }
 
@@ -27,6 +32,12 @@ namespace FancyMenu
         {
             MainContent.SizeChanged -= OnMainContentSizeChanged;
             _flyoutTranslationX = MainContent.Width * .75;
+
+            if (Flyout.Children.Count == 1 && Flyout.Children[0] is Layout menuPage)
+            {
+                var flyoutPadding = Flyout.Width - (Flyout.Width * .8);
+                (Flyout.Children[0] as Layout).Padding = new Thickness(0, 0, flyoutPadding, 0);
+            }
         }
 
         void FlyoutClose(object sender, SwipedEventArgs e)
@@ -53,7 +64,7 @@ namespace FancyMenu
             {
                 MainContent.ScaleTo(_scale * .9, _flyoutSpeed);
                 MainContent.TranslateTo(Flyout.TranslationX + _flyoutTranslationX, Flyout.TranslationY, _flyoutSpeed);
-                MainContent.CornerRadius = _flyoutCornerRadius;
+                MainContent.CornerRadius = FlyoutCornerRadius;
             }
 
             _isFlyoutOpen = !_isFlyoutOpen;
