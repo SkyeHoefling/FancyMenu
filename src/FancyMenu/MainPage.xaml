@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <StackLayout Margin="0, 0, 0, 0" 
-                         Padding="10, 15"
+                         Padding="{OnPlatform Android='10, 15', iOS='10, 40, 10, 15'}"
                          Orientation="Horizontal"
                          BackgroundColor="Purple"
                          Spacing="15">
@@ -36,7 +36,9 @@
         <StackLayout Grid.Row="1">
             <Label Text="Welcome to Xamarin Code Snippets for Xamarin Month 2020!"
                    VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"/>
         </StackLayout>
     </Grid>
     
