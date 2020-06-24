@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace FancyMenu
@@ -9,6 +10,13 @@ namespace FancyMenu
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        public event EventHandler ToggleMenu;
+
+        void OnMenuTapped(object sender, System.EventArgs e)
+        {
+            ToggleMenu?.Invoke(sender, e);
         }
     }
 }

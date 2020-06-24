@@ -20,7 +20,7 @@
                 <SwipeGestureRecognizer Direction="Right"
                                         Swiped="FlyoutOpen" />
             </Frame.GestureRecognizers>
-            <views:MainPage />
+            <views:MainPage ToggleMenu="OnToggleMenu" />
         </Frame>
     </Grid>
 

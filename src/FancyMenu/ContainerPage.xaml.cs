@@ -40,6 +40,11 @@ namespace FancyMenu
             }
         }
 
+        void OnToggleMenu(object sender, EventArgs e)
+        {
+            ToggleFlyout();
+        }
+
         void FlyoutClose(object sender, SwipedEventArgs e)
         {
             if (_isFlyoutOpen)
