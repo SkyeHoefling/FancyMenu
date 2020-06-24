@@ -6,11 +6,70 @@
              mc:Ignorable="d"
              BackgroundColor="SkyBlue"
              x:Class="FancyMenu.MenuPage">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
     
-    <StackLayout>
-        <Label Text="Flyout Menu"
-            VerticalOptions="CenterAndExpand" 
-            HorizontalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" Padding="50, 25">
+            <Label Text="Fancy Menu"
+                   TextColor="White"
+                   FontSize="30"
+                   HorizontalOptions="CenterAndExpand"/>
+            <BoxView BackgroundColor="White" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Padding="10, 0, 10, 25">
+            <Label Text="This is the fancy menu where youc an customize your control just like any page. I prefer to place header or profile content above the buttons, which is what this space is designed for." />
+        </StackLayout>
+
+        <Grid Grid.Row="2" Padding="25, 0, 25, 25" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Spacing="20"
+                         VerticalOptions="CenterAndExpand">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Frame">
+                            <Setter Property="BackgroundColor" Value="Lavender" />
+                            <Setter Property="CornerRadius" Value="10" />
+                            <Setter Property="Padding" Value="15, 10" />
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+                <Frame>
+                    <Label Text="Home" />
+                </Frame>
+                <Frame>
+                    <Label Text="Settings" />
+                </Frame>
+                <Frame>
+                    <Label Text="About" />
+                </Frame>
+                <Frame>
+                    <Label Text="GitHub" />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" VerticalOptions="EndAndExpand">
+                <Label Text="Made with ❤ by Andrew Hoefling" />
+                <Label Text="Open Source Software" />
+            </StackLayout>
+        </Grid>
+        
+        <!---->
+    </Grid>
     
 </ContentView>
