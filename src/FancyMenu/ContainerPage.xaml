@@ -8,6 +8,7 @@
              x:Class="FancyMenu.ContainerPage">
 
     <Grid>
+        
         <Grid x:Name="Flyout" BackgroundColor="Transparent" Margin="0" Padding="0">
             <Grid.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Left"
@@ -15,6 +16,7 @@
             </Grid.GestureRecognizers>
             <views:MenuPage />
         </Grid>
+        
         <Frame x:Name="MainContent" BackgroundColor="Transparent" Margin="0" Padding="0">
             <Frame.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Right"
@@ -22,6 +24,7 @@
             </Frame.GestureRecognizers>
             <views:MainPage ToggleMenu="OnToggleMenu" />
         </Frame>
+        
     </Grid>
 
 </ContentPage>
